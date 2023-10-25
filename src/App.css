@@ -18,7 +18,7 @@ body{
 }
 
 .selected-city{
-  background-image: url("./src/fondo-nube.png");
+  background-image: url("./fondo-nube.png");
   height: 100vh;
 }
 
