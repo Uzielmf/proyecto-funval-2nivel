@@ -1,0 +1,225 @@
+*{
+  font-family: 'Raleway', sans-serif;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+}
+
+.letter-gray{
+  color: rgba(160, 159, 177, 1);
+}
+
+.container-general{
+  display: grid;
+  grid-template-columns: 32% auto;
+  
+}
+
+.selected-city{
+  background-image: url("./src/fondo-nube.png");
+  height: 100vh;
+}
+
+.change-units{
+ display: flex;
+ gap: 2rem;
+ position: absolute;
+ top: 5vh;
+ right: 12vh;
+}
+
+.Celsius{
+color: rgba(17, 14, 60, 1);
+background-color: rgba(231, 231, 235, 1);
+padding: 10px;
+height: 45px;
+width: 45px;
+border-radius: 50px;
+}
+
+.farenheits{
+  color: rgba(231, 231, 235, 1);
+  background-color: rgba(88, 86, 118, 1);
+  padding: 10px;
+  height: 45px;
+  width: 45px;
+  border-radius: 50px;
+}
+
+.data-today{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.more-padding{
+  padding: 3vh;
+}
+
+.grados-today{
+ color: rgba(231, 231, 235, 1);
+ font-size: 6rem;
+ height: 10%;
+}
+
+.details{
+  background-color: rgba(16, 14, 29, 1);
+  display: grid;
+  grid-template-rows: 40% 60%;
+}
+
+.fondo-nube{
+  object-fit: contain;
+  height: 100vh;
+}
+
+p{
+  color: white;
+}
+
+.container-week{
+  display: grid;
+  grid-template-columns:  15% 15% 15% 15% 15%;
+  gap: 2rem;
+}
+
+.card-day{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:rgba(30, 33, 58, 1);
+  height: 18vh;
+}
+
+.container-details{
+  display: grid;
+  grid-template-columns: 40% 40%;
+  gap: 10%;
+  grid-template-rows: 20vh 12vh ;
+  
+}
+
+.card-name{
+  background-color: rgba(30, 33, 58, 1);
+  padding: 5% 8% 10% 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-name2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(30, 33, 58, 1);
+  padding: 5% 8% 10% 8%;
+}
+
+.datos-dia{
+  display: flex;
+  align-items: center;
+}
+
+.porcentaje{
+  width: 80%;
+  background-color: yellow;
+  height: 7px;
+  border-radius: 10px;
+  margin-top: 7px;
+}
+
+.porcentaje-levels{
+  display: flex;
+  justify-content: space-between;
+}
+
+.big-letter{
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.less-margin{
+  margin: 0px;
+}
+
+.button-search{
+  padding: 0 .6rem;
+  font-size: .8rem;
+  background-color: rgba(110, 112, 122, 1);
+  color: rgba(231, 231, 235, 1);
+}
+
+.input-search{
+  border: 1px solid rgba(97, 100, 117, 1);
+  color:rgba(97, 100, 117, 1); 
+  height: 1rem;
+}
+
+@media (max-width: 450px){
+  .container-general{
+    display: grid;
+    grid-template-columns: auto;
+    
+  }
+
+  .selected-city{
+    background-image: url("./src/fondo-nube.png");
+    height: 100vh;
+  }
+
+  .container-week{
+    display: grid;
+    justify-content: center;
+    grid-template-columns:  40% 40%;
+    padding-bottom: 4rem;
+  }
+
+  .details{
+    background-color: rgba(16, 14, 29, 1);
+    display: grid;
+    grid-template-rows: auto auto;
+  }
+
+  .card-day{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(30, 33, 58, 1);
+    height: 20vh;
+  }
+
+  .container-details{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 90%;
+    gap: 5%;
+    grid-template-rows: auto;
+    padding-bottom: 10rem;
+  }
+
+  .card-name{
+    background-color: rgba(30, 33, 58, 1);
+    padding: 5% 8% 10% 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-name2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(30, 33, 58, 1);
+    padding: 5% 8% 10% 8%;
+  }
+
+  .change-units{
+    display: none;
+  }
+}
