@@ -21,7 +21,7 @@ function SelectedCity({getData, climaActual, city, imgToday, setCity}) {
           <img src="" alt="" />
           
           <Box className=''>
-          <img src={`./${imgToday}.png`} className='more-padding' alt="" />
+          <img src={`./public/img/${imgToday}.png`} className='more-padding' alt="" />
           <h2 className='grados-today more-padding'>{climaActual?.main.temp}</h2>
           <h2 className='letter-gray more-padding'>{climaActual?.weather[0].description}</h2>
 
