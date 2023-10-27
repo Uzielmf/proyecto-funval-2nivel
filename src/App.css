@@ -159,6 +159,27 @@ p{
   height: 1rem;
 }
 
+.img-week{
+  height: 30%;
+}
+.grados-week{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2rem;
+}
+
+.div-search{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+}
+
+.icono-search{
+  border: 1px solid lightgray;
+  width: 2rem;
+  border-radius: 10px;
+}
+
 @media (max-width: 450px){
   .container-general{
     display: grid;

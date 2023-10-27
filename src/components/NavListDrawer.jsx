@@ -8,21 +8,25 @@ import SearchIcon from '@mui/icons-material/Search';
 function NavListDrawer({setCity}) {
     const [newCity, setNewCity] = useState('')
   return (
-    <Box sx={{width:'20rem', bgcolor:'rgba(30, 33, 58, 1)' , color:"rgba(231, 231, 235, 1)"}}>
+    <Box sx={{
+        height:'100vh',
+        width:'20rem', 
+        bgcolor:'rgba(30, 33, 58, 1)' ,
+        color:"rgba(231, 231, 235, 1)"}}>
         <nav>
             <List>
 
             <ListItem>
-                    <form>
+                    <form className='div-search'>
                     <Input sx={{border: '1px solid rgba(97, 100, 117, 1)',
                         color:'rgba(97, 100, 117, 1)'}} placeholder='Icono - search location' onChange={(e)=>{setNewCity(e.target.value)
                     console.log(newCity);}}/> 
                     
-                    <button onClick={(e)=>{
+                    <div className='icono-search' onClick={(e)=>{
                         e.preventDefault()
                         setCity(newCity)
                         }
-                        }>{<SearchIcon/>}</button>
+                        }>{<SearchIcon sx={{pt:"3px", pl:'.3rem'}}/>}</div>
                     </form>
                 </ListItem>
 

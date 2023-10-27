@@ -13,34 +13,59 @@ function App() {
   const [porcentaje,setPorcentaje] = useState(40)
   const [grados,setGrados] = useState('metric')
   const [imgToday,setImgToday] = useState('')
+  // const [lon,setLon] =useState(-103.3333)
+  // const [lat,setLat] =useState(20.6667)
+
+  const [dataWeek,setDataWeek] = useState('')
+  
 
   const apiKey = 'bafb3bef1ccb9f00b7567afab00a77cf'
 
   const getData = async () =>{
     const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${grados}`)
     const datos = await res.json()
+
     setClimaActual(datos)
     setPorcentaje(datos.main.humidity)
     setImgToday(datos.weather[0].icon)
-    console.log(climaActual);
+    
   }
 
-  const changeCity = (e)=>{
-    e.eventPreventDefault()
+   const getDataWeek = async () => {
+     const resWeek = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${grados}`)
+     const datosweek = await resWeek.json()
+     setDataWeek(datosweek)
+   }
 
-  }
+  // const getDataWeek = async () => {
+  //   setLon(climaActual.coord?.lon)
+  //   setLat(climaActual.coord?.lat)
+  //   console.log(lon, lat);
+  //   const resWeek = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=hourly,daily&appid=${apiKey}`)
+  //   const datosweek = await resWeek.json()
+  //   setDataWeek(datosweek)
+  // }
 
   useEffect(()=>{
     getData()
-    console.log(climaActual);
+    
+    console.log(dataWeek);
+  },[])
+
+  useEffect(()=>{
+    getDataWeek()
   },[])
 
   useEffect(()=>{
     getData()
+    getDataWeek()
+    console.log(dataWeek)
   },[grados])
 
   useEffect(()=>{
     getData()
+    getDataWeek()
+    console.log(dataWeek)
   },[city])
 
   return (
@@ -59,7 +84,7 @@ function App() {
 
           {/* Contenedor del clima de los proximo 5 dias */}
           
-          <NextFiveDays setGrados={setGrados}/>
+          <NextFiveDays setGrados={setGrados} dataWeek={dataWeek}/>
 
 
           {/* Contenedor de los datos del clima del dia */}
