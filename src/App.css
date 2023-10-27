@@ -159,6 +159,15 @@ p{
   height: 1rem;
 }
 
+.img-week{
+  height: 30%;
+}
+.grados-week{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2rem;
+}
+
 @media (max-width: 450px){
   .container-general{
     display: grid;
