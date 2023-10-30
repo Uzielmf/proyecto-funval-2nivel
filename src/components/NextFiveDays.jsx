@@ -1,9 +1,10 @@
 import { Box } from '@mui/material'
 import React from 'react'
 
-function NextFiveDays({setGrados,dataWeek}) {
+function NextFiveDays({setGrados,dataWeek, grados}) {
   
-  const options = { day: 'numeric', month: 'short', year: 'numeric'};
+  const options = {weekday: 'short' , day: 'numeric', month: 'short'};
+  const grado = grados=='metric'?'C':'F'
 
   //datos dia1
   const min1 = dataWeek==''?'':dataWeek.list[1].main.temp_min
@@ -48,48 +49,50 @@ function NextFiveDays({setGrados,dataWeek}) {
   return (
     <Box sx={{pt: '13%', pl:'8%'}}>
       <div className='change-units'> 
-      <button onClick={()=>{setGrados('imperial')}} className='farenheits'>F</button>
-      <button onClick={()=>{setGrados('metric')}} className='Celsius'>C</button>
+      
+      <button onClick={()=>{setGrados('metric')}} className='Celsius'>º C</button>
+      <button onClick={()=>{setGrados('imperial')}} className='farenheits'>º F</button>
+      
       </div>
           <div className='container-week'>
             <Box className='card-day'>
                 <p>Tomorrow</p>
                 <img src={`./img/${img1}.png`} alt="" className='img-week'/>
                 <div className='grados-week'>
-                  <p>{Math.round(max1)}</p>
-                  <p>{Math.round(min1)}</p>
+                  <p>{Math.round(max1)}°{grado}</p>
+                  <p className='letter-gray'>{Math.round(min1)}°{grado}</p>
                 </div>
             </Box >
             <Box className='card-day'>
             <p>{fechaFormateada2}</p>
             <img src={`./img/${img2}.png`} alt="" className='img-week'/>
             <div className='grados-week'>
-                  <p>{Math.round(max2)}</p>
-                  <p>{Math.round(min2)}</p>
+                  <p>{Math.round(max2)}°{grado}</p>
+                  <p className='letter-gray'>{Math.round(min2)}°{grado}</p>
                 </div>
             </Box>
             <Box className='card-day'>
             <p>{fechaFormateada3}</p>
             <img src={`./img/${img3}.png`} alt="" className='img-week'/>
             <div className='grados-week'>
-                  <p>{Math.round(max3)}</p>
-                  <p>{Math.round(min3)}</p>
+                  <p>{Math.round(max3)}°{grado}</p>
+                  <p className='letter-gray'>{Math.round(min3)}°{grado}</p>
                 </div>
             </Box>
             <Box className='card-day'>
             <p>{fechaFormateada4}</p>
             <img src={`./img/${img4}.png`} alt="" className='img-week'/>
             <div className='grados-week'>
-                  <p>{Math.round(max4)}</p>
-                  <p>{Math.round(min4)}</p>
+                  <p>{Math.round(max4)}°{grado}</p>
+                  <p className='letter-gray'>{Math.round(min4)}°{grado}</p>
                 </div>
             </Box>
             <Box className='card-day'>
             <p>{fechaFormateada5}</p>
             <img src={`./img/${img5}.png`} alt="" className='img-week'/>
             <div className='grados-week'>
-                  <p>{Math.round(max5)}</p>
-                  <p>{Math.round(min5)}</p>
+                  <p>{Math.round(max5)}°{grado}</p>
+                  <p className='letter-gray'>{Math.round(min5)}°{grado}</p>
                 </div>
             </Box>
           </div>

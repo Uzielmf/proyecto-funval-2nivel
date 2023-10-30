@@ -33,19 +33,21 @@ body{
 .Celsius{
 color: rgba(17, 14, 60, 1);
 background-color: rgba(231, 231, 235, 1);
-padding: 10px;
-height: 45px;
-width: 45px;
+padding: 8px;
+height: 40px;
+width: 40px;
 border-radius: 50px;
+border: none;
 }
 
 .farenheits{
   color: rgba(231, 231, 235, 1);
   background-color: rgba(88, 86, 118, 1);
-  padding: 10px;
-  height: 45px;
-  width: 45px;
+  padding: 8px;
+  height: 40px;
+  width: 40px;
   border-radius: 50px;
+  border: none;
 }
 
 .data-today{
@@ -97,9 +99,9 @@ p{
 .container-details{
   display: grid;
   grid-template-columns: 40% 40%;
-  gap: 10%;
+  gap: 5%;
   grid-template-rows: 20vh 12vh ;
-  
+  row-gap: 20%;
 }
 
 .card-name{
@@ -109,6 +111,7 @@ p{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 75%;
 }
 
 .card-name2{
@@ -117,6 +120,7 @@ p{
   justify-content: space-between;
   background-color: rgba(30, 33, 58, 1);
   padding: 5% 8% 10% 8%;
+  height: 75%;
 }
 
 .datos-dia{
@@ -138,8 +142,8 @@ p{
 }
 
 .big-letter{
-  font-size: 2rem;
-  font-weight: 100;
+  font-size: 2.5rem;
+  font-weight: 1000;
 }
 
 .less-margin{
@@ -178,6 +182,10 @@ p{
   border: 1px solid lightgray;
   width: 2rem;
   border-radius: 10px;
+}
+
+.letter-small{
+  font-size: 25px;
 }
 
 @media (max-width: 450px){
