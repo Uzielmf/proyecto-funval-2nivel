@@ -13,13 +13,15 @@ function App() {
   const [porcentaje,setPorcentaje] = useState(40)
   const [grados,setGrados] = useState('metric')
   const [imgToday,setImgToday] = useState('')
-  // const [lon,setLon] =useState(-103.3333)
-  // const [lat,setLat] =useState(20.6667)
+  const [lon,setLon] =useState('')
+  const [lat,setLat] =useState('')
+  const [link,setLink] =useState()
 
   const [dataWeek,setDataWeek] = useState('')
-  
-
+    
   const apiKey = 'bafb3bef1ccb9f00b7567afab00a77cf'
+
+  
 
   const getData = async () =>{
     const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${grados}`)
@@ -35,6 +37,26 @@ function App() {
      const resWeek = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${grados}`)
      const datosweek = await resWeek.json()
      setDataWeek(datosweek)
+   }
+
+  //  const getDataLocation = async (lat, lon) => {
+  //   const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
+  //   const datos = await res.json()
+
+  //   setClimaActual(datos)
+  //   setPorcentaje(datos.main.humidity)
+  //   setImgToday(datos.weather[0].icon)
+  //  }
+
+   const getLocation= ()=>{
+    navigator.geolocation.getCurrentPosition(async position => {
+      setLat(position.coords.latitude)
+      setLon(position.coords.longitude)
+      
+      // getDataLocation(lat, lon)
+    console.log(lat,lon);
+    })
+
    }
 
   // const getDataWeek = async () => {
@@ -76,7 +98,7 @@ function App() {
       
       <cityContext.Provider value={city}>
         {/* Ciudad Seleccionada */}
-        <SelectedCity getData={getData} climaActual={climaActual} city={city} imgToday={imgToday} setCity={setCity}/>
+        <SelectedCity getLocation={getLocation} getData={getData} climaActual={climaActual} city={city} imgToday={imgToday} setCity={setCity} grados={grados} setLonlon={setLon} setLatlat={setLat}/>
 
         </cityContext.Provider>
         
@@ -84,7 +106,7 @@ function App() {
 
           {/* Contenedor del clima de los proximo 5 dias */}
           
-          <NextFiveDays setGrados={setGrados} dataWeek={dataWeek}/>
+          <NextFiveDays setGrados={setGrados} dataWeek={dataWeek} grados={grados}/>
 
 
           {/* Contenedor de los datos del clima del dia */}
