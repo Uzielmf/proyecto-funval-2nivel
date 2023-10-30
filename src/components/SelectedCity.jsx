@@ -11,6 +11,7 @@ function SelectedCity({getLocation ,getData, climaActual, city, imgToday, setCit
   const grado = grados=='metric'?'C':'F'
   return (
     <div className='selected-city'>
+      <img className='fondo-selected-city' src='./img/Cloud-background.png' alt="" />
           <Box sx={{m:'8% 12%',display:'flex', justifyContent:'space-between'}}>
           <SearchLocation setCity={setCity}></SearchLocation>
         <div onClick={()=>{getLocation()}} >{<GpsFixedIcon sx={{width:'20px', height:'20px', borderRadius:'60px' , background:'rgba(255, 255, 255, 0.2)', p:'7px', color:'rgba(231, 231, 235, 1)'}}/>}</div>
