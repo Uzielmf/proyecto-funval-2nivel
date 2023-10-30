@@ -18,8 +18,20 @@ body{
 }
 
 .selected-city{
-  background-image: url('./assets/img/fondo-nube.png');
+  background-color: rgba(30, 33, 58, 1);
   height: 100vh;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.fondo-selected-city{
+  position: absolute;
+    left: -18%;
+    top: 12%;
+    width: 123%;
+    height: 35%;
+    opacity: 0.1;
 }
 
 .change-units{
@@ -196,8 +208,8 @@ p{
   }
 
   .selected-city{
-    background-image: url('./assets/img/fondo-nube.png');
     height: 100vh;
+    text-align: center;
   }
 
   .container-week{
